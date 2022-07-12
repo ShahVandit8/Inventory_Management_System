@@ -1,0 +1,208 @@
+String sql = "SELECT Password,Usertype FROM emp_ims WHERE ID ="+Lid.getText();
+        
+        try {
+            stmt = con.createStatement();
+            rs = stmt.executeQuery(sql);
+            
+            while(rs.next()) {
+                if(Lid.getText().equals(rs.getString(1))) {
+                    if(Lpass.getText().equals(rs.getString(2))) {
+                        String x = "Admin";
+                        if (rs.getString(3).equals(x)) {
+                            Dashboard1 db1 = new Dashboard1();
+                            db1.show();
+                            dispose();
+                            break;
+                        }
+                        else {
+                           Dashboard2 db2 = new Dashboard2();
+                            db2.show();
+                            dispose();
+                            break;
+                        }
+                    }
+                    else {
+                        javax.swing.JOptionPane.showMessageDialog(null, "Wrong Password");
+                    }
+                }
+                else {
+                    javax.swing.JOptionPane.showMessageDialog(null, "Wrong Unique ID");
+                 }
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+if(Lid.getText().equals(rs.getString(1))) {
+                    if(Lpass.getText().equals(rs.getString(2))) {
+                        String x = "Admin";
+                        if (rs.getString(3).equals(x)) {
+                            Dashboard1 db1 = new Dashboard1();
+                            db1.show();
+                            dispose();
+                            break;
+                        }
+                        else {
+                           Dashboard2 db2 = new Dashboard2();
+                            db2.show();
+                            dispose();
+                            break;
+                        }
+                    }
+                    else {
+                        javax.swing.JOptionPane.showMessageDialog(null, "Wrong Password");
+                    }
+                }
+                else {
+                    javax.swing.JOptionPane.showMessageDialog(null, "Wrong Unique ID");
+                 }
+
+
+
+
+
+
+
+
+
+<html>
+    <head>
+        <title>Question 2</title>
+        <script>
+            function display() {
+                var name1 = document.getElementById("name").value;
+                var gender1 = document.details.gender.value; 
+                var hobbies1 = document.querySelector('.hb:checked').value;
+
+                alert("Name : "+name1+" | Gender : "+gender1+" | hobbies : "+hobbies1+" | City : "+city1);
+            }
+        </script> 
+    </head>
+    <body>
+        <h1> Student Information </h1>
+        <form name="details">
+            <label for="name">Enter Name: </label>
+            <input type="text" id="name" name="name"/>
+            <br><br>
+
+            <label for="gender" >Gender : </label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male" >Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="male" >Female</label>
+            <br><br>
+
+            <label for="hobbies">Hobbies : </label>
+            <input class="hb" type="checkbox" id="cricket" name="hobbies" value="Cricket">
+            <label for="cricket" >Cricket</label>
+            <input class="hb" type="checkbox" id="swimming" name="hobbies" value="Swimming">
+            <label for="swimming">Swimming</label>
+            <input class="hb" type="checkbox" id="reading" name="hobbies" value="Reading">
+            <label for="reading">Reading</label>
+            <input class="hb" type="checkbox" id="programming" name="hobbies" value="Programming">
+            <label for="programming">Programming</label>
+            <input class="hb" type="checkbox" id="blogging" name="hobbies" value="Blogging">
+            <label for="blogging">Blogging</label>
+            <br><br>
+
+            <label for="city">City : </label>
+            <select name="city" id="city" onchange="city1 = city.value">
+                <option value="Ahemdabad">Ahemdabad</option>
+                <option value="Vadodara">Vadodara</option>
+                <option value="Bharuch">Bharuch</option>
+                <option value="Surat">Surat</option>
+              </select>
+              <br><br>
+
+              <button onclick="display()">Submit</button>
+        </form>
+    </body>
+</html>
+
+
+
+
+
+<html>
+    <head>
+        <title>Question 3</title> 
+        <script>
+            var x = 0;
+            var array = Array();
+
+            function add_element_to_array()
+            {
+                array[x] = document.getElementById("text1").value;
+                alert("Element: " + array[x] + " Added at index " + x);
+                x++;
+                document.getElementById("text1").value = "";
+            }
+
+            function display_array()
+            {
+                var e = "<hr/>";   
+                    
+                for (var y=0; y<array.length; y++)
+                {
+                    e += "Element " + y + " = " + array[y] + "<br/>";
+                }
+                document.getElementById("Result").innerHTML = e;
+            }
+        </script>
+    </head>
+<body>
+    <input type="text" id="text1"></input>
+    <input type="button" id="button1" value="Add" onclick="add_element_to_array();"></input>
+    <input type="button" id="button2" value="Display" onclick="display_array();"></input>
+    <div id="Result"></div> 
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 4</title>
+    <style>
+        #btn {
+            position: absolute;
+            left: 100px;
+            top: 150px;
+        }
+
+    </style>
+    <script>
+        function change() {
+            var left1 = Math.floor(Math.random() * 1200);
+            var top1 = Math.floor(Math.random() *500);
+            document.getElementById("btn").style.left = left1 + "px";
+            document.getElementById("btn").style.top = top1 + "px";
+        }
+    </script>
+</head>
+<body>
+    <button id="btn" onclick="change()"><img src="image.jpg" alt="img" height="200" width="200"></button>
+</body>
+</html>
